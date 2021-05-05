@@ -24,7 +24,7 @@ public class RegistActivity extends AppCompatActivity {
     }
 
     public void onRegistration(View view) {
-        Person person = new Person(login.getText().toString(), password.getText().toString(), name.getText().toString(), surname.getText().toString(), status.getText().toString(), grade.getText().toString(), Integer.parseInt(age.getText().toString()));
+        Person person = new Person();//login.getText().toString(), password.getText().toString(), name.getText().toString(), surname.getText().toString(), status.getText().toString(), grade.getText().toString(), Integer.parseInt(age.getText().toString()));
         name.getText();
         if (name!=null){
             person.setName(name.toString());
@@ -73,7 +73,10 @@ public class RegistActivity extends AppCompatActivity {
         if (Integer.parseInt(grade.toString())<=0){
             Toast.makeText(this, "@string/grade_error1", Toast.LENGTH_LONG).show();
         }
-        else if (grade!=null){
+        else if ((grade==null)&&(status.equals("@string/status1")||status.equals("@string/status2"))) {
+            cnt++;
+        }
+        else if (grade!=null&&(status.equals("@string/status3"))){
             person.setGrade(grade.toString());
             cnt++;
         } else {

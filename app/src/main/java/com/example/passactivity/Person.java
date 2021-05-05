@@ -21,6 +21,9 @@ public class Person {
         Age = age;
     }
 
+    public Person() {
+    }
+
     public void setName(String name) {
         Name = name;
     }
