@@ -12,6 +12,7 @@ public class ConfirmActivity extends AppCompatActivity {
     EditText edit;
     String admin_code="ADmIniSTRAtor", editcode;
     String l;
+    int k=0;
     DataBaseAdapter adapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +26,7 @@ public class ConfirmActivity extends AppCompatActivity {
         editcode= edit.getText().toString();
         if (editcode.equals(admin_code)){
             Toast.makeText(this, "@string/conf_success", Toast.LENGTH_LONG).show();
+            k++;
             Intent intent = new Intent(ConfirmActivity.this, LoginActivity.class);
             startActivity(intent);
         } else {
@@ -35,6 +37,8 @@ public class ConfirmActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        adapter.delete(l);
+        if (k==0){
+            adapter.delete(l);
+        }
     }
 }
