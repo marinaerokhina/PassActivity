@@ -82,12 +82,12 @@ public class DataBaseAdapter {
         return  persons;
     }
 
-    public Person getPerson(long id) {
+    public Person getPerson(String login) {
         Person person = null;
         String query = String.format("SELECT * FROM %s WHERE %s=?", DataBaseHelper.TABLE, DataBaseHelper.COLUMN_LOGIN);
-        Cursor cursor = database.rawQuery(query, new String[]{String.valueOf(id)});
+        Cursor cursor = database.rawQuery(query, new String[]{String.valueOf(login)});
         if (cursor.moveToFirst()) {
-            String login = cursor.getString(cursor.getColumnIndex(DataBaseHelper.COLUMN_LOGIN));;
+            //String login = cursor.getString(cursor.getColumnIndex(DataBaseHelper.COLUMN_LOGIN));;
             String name = cursor.getString(cursor.getColumnIndex(DataBaseHelper.COLUMN_NAME));
             String surname = cursor.getString(cursor.getColumnIndex(DataBaseHelper.COLUMN_SURNAME));
             String password = cursor.getString(cursor.getColumnIndex(DataBaseHelper.COLUMN_PASSWORD));

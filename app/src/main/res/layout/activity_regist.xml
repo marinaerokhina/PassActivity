@@ -14,6 +14,7 @@
             android:id="@+id/Name"
             android:hint="@string/your_name"
             android:gravity="center"
+            android:inputType="textPersonName"
             android:textSize="30sp"
     />
     <EditText
@@ -22,6 +23,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/Surname"
             android:hint="@string/your_surname"
+            android:inputType="textPersonName"
             android:gravity="center"
             android:textSize="30sp"
     />
@@ -40,6 +42,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/Status"
             android:hint="@string/status"
+            android:inputType="textPersonName"
             android:gravity="center"
             android:textSize="30sp"
     />
@@ -49,6 +52,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/Age"
             android:hint="@string/your_age"
+            android:inputType="number"
             android:gravity="center"
             android:textSize="30sp"
     />
@@ -67,6 +71,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/Password"
             android:hint="@string/your_password"
+            android:inputType="textVisiblePassword"
             android:gravity="center"
             android:textSize="30sp"
     />

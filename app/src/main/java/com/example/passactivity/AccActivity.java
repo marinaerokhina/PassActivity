@@ -14,7 +14,7 @@ public class AccActivity extends AppCompatActivity {
     String p, st, n, s, g;
     int a;
     DataBaseAdapter dataBaseAdapter;
-    List<Person> personList;
+    Person person;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,18 +28,13 @@ public class AccActivity extends AppCompatActivity {
         grade = findViewById(R.id.grade);
         age = findViewById(R.id.age);
         warning = findViewById(R.id.warning);
-        personList = new ArrayList<>();
-        personList = dataBaseAdapter.getPersons();
-        for (int i = 0; i <personList.size() ; i++) {
-            if (l.equals(personList.get(i).getLogin())) {
-                p = personList.get(i).getPassword();
-                st = personList.get(i).getStatus();
-                n = personList.get(i).getName();
-                s = personList.get(i).getSurname();
-                g = personList.get(i).getGrade();
-                a = personList.get(i).getAge();
-            }
-        }
+        person = dataBaseAdapter.getPerson(l);
+        p = person.getPassword();
+        st = person.getStatus();
+        n = person.getName();
+        s = person.getSurname();
+        g = person.getGrade();
+        a = person.getAge();
         login.setText(l);
         password.setText(p);
         name.setText(n);
