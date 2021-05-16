@@ -50,4 +50,5 @@
     <string name="the_list_of_teachers">THE LIST OF TEACHERS</string>
     <string name="new_admin_code">TYPE NEW ADMIN CODE</string>
     <string name="save_code">SAVE CODE</string>
+    <string name="edit_admin_code">EDIT ADMIN CODE</string>
 </resources>

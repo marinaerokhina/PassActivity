@@ -26,7 +26,6 @@ public class AdminHomeActivity extends AppCompatActivity {
 
     public void editConfirmCode(View view) {
         Intent intent = new Intent(AdminHomeActivity.this, EditCodeActivity.class);
-        intent.putExtra("PersonLogin", l);
         startActivity(intent);
     }
 }
