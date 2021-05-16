@@ -41,4 +41,9 @@
     <string name="admin_confirm">CONFIRM ACCOUNT</string>
     <string name="conf_success">CONFIRMED SUCCESSFULLY!</string>
     <string name="conf_error">PROBLEM WITH CONFIRMING. PLEASE, CHECK THE CODE YOU TYPED</string>
+    <string name="new_grade">TYPE GRADE YOU TEACH</string>
+    <string name="add_grade_to_gradelist">ADD GRADE TO YOUR GRADELIST</string>
+    <string name="finish_addgrades">IF YOU ADDED ALL GRADES, PLEASE, CLICK THIS BUTTON</string>
+    <string name="grades_error">ERROR. YOU NOT FILLED THE GAP</string>
+    <string name="grades_success">YOU FILLED GRADES SUCCESSFULLY!</string>
 </resources>

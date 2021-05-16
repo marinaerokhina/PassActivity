@@ -7,4 +7,23 @@
     android:orientation="vertical"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/add"
+        android:hint="@string/new_grade"
+        android:gravity="center"
+     />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/add_grade_to_gradelist"
+        android:onClick="AddGrade"
+     />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/finish_addgrades"
+        android:onClick="FinishAdd"
+    />
 </LinearLayout>
