@@ -15,12 +15,13 @@
             android:text="@string/your_account"
             android:onClick="openAccount"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" android:id="@+id/button2"/>
+            android:layout_height="wrap_content"
+            android:id="@+id/button"/>
     <Button
             android:text="@string/your_information"
             android:onClick="openInfo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/button3"/>
+            android:id="@+id/button2"/>
 
 </LinearLayout>

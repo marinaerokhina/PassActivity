@@ -1,5 +1,6 @@
 package com.example.passactivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
@@ -15,8 +16,14 @@ public class TeacherHomeActivity extends AppCompatActivity {
     }
 
     public void openTeacherAccount(View view) {
+        Intent intent = new Intent(TeacherHomeActivity.this, TeacherAccActivity.class);
+        intent.putExtra("PersonLogin", l);
+        startActivity(intent);
     }
 
-    public void openTeacherInf(View view) {
+    public void openTeacherInfo(View view) {
+        Intent intent = new Intent(TeacherHomeActivity.this, TeacherInfoActivity.class);
+        intent.putExtra("PersonLogin", l);
+        startActivity(intent);
     }
 }
