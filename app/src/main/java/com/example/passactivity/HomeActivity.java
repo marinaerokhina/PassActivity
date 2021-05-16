@@ -24,7 +24,7 @@ public class HomeActivity extends AppCompatActivity {
        startActivity(intent);
     }
 
-    public void openInf(View view) {
+    public void openInfo(View view) {
         Intent intent = new Intent(HomeActivity.this, InfoActivity.class);
         intent.putExtra("PersonLogin", l);
         startActivity(intent);
