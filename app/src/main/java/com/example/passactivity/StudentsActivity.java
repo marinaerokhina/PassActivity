@@ -17,7 +17,6 @@ public class StudentsActivity extends AppCompatActivity {
     String g;
     int k=0;
     ListView listView;
-    EditText request;
     DataBaseAdapter dbAdapter;
     List<Person> personList;
     SQLiteDatabase db;
@@ -29,7 +28,6 @@ public class StudentsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_students);
         g = getIntent().getStringExtra("Grade");
         listView = findViewById(R.id.students);
-        request = findViewById(R.id.search_space);
         personList = new ArrayList<Person>();
         dataBaseHelper = new DataBaseHelper(getApplicationContext());
         dataBaseHelper.create_db();
