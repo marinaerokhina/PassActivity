@@ -88,5 +88,6 @@
         android:layout_height="wrap_content"
         android:id="@+id/warning"
         android:textSize="30sp"
+        android:textColor="@color/red"
         />
 </LinearLayout>
