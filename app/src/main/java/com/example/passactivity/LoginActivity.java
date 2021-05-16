@@ -49,6 +49,7 @@ public class LoginActivity extends AppCompatActivity {
             if (l.equals(personList.get(i).getLogin()) && p.equals(personList.get(i).getPassword())) {
                 Toast.makeText(this, "@string/log_success", Toast.LENGTH_LONG).show();
                 Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
+                intent.putExtra("PersonLogin", l);
                 startActivity(intent);
             } else if (l == null || p == null) {
                 textview.setText("@string/log_error1");
