@@ -12,12 +12,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content" android:id="@+id/button"/>
     <Button
-            android:text="YOUR ACCOUNT"
+            android:text="@string/your_account"
             android:onClick="openAccount"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" android:id="@+id/button2"/>
     <Button
-            android:text="YOUR INFORMATION"
+            android:text="@string/your_information"
             android:onClick="openInf"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

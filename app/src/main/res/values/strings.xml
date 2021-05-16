@@ -31,4 +31,6 @@
     <string name="warning_change_params">IF YOU WANT TO CHANGE INFORMATION OF YOUR ACCOUNT, PLEASE, ASK ADMINISTRATOR OF THIS APP IN YOUR ORGANISATION</string>
     <string name="table_request">YOUR REQUEST</string>
     <string name="intable_search">SEARCH</string>
+    <string name="your_account">YOUR ACCOUNT</string>
+    <string name="your_information">YOUR INFORMATION</string>
 </resources>

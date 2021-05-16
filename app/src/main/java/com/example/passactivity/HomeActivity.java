@@ -19,13 +19,13 @@ public class HomeActivity extends AppCompatActivity {
     }*/
 
     public void openAccount(View view) {
-       Intent intent = new Intent(HomeActivity.this, InfoActivity.class);
+       Intent intent = new Intent(HomeActivity.this, AccActivity.class);
        intent.putExtra("PersonLogin", l);
        startActivity(intent);
     }
 
     public void openInf(View view) {
-        Intent intent = new Intent(HomeActivity.this, InfActivity.class);
+        Intent intent = new Intent(HomeActivity.this, InfoActivity.class);
         intent.putExtra("PersonLogin", l);
         startActivity(intent);
     }
