@@ -19,7 +19,7 @@ public class HomeActivity extends AppCompatActivity {
     }*/
 
     public void openAccount(View view) {
-       Intent intent = new Intent(HomeActivity.this, AccActivity.class);
+       Intent intent = new Intent(HomeActivity.this, InfoActivity.class);
        intent.putExtra("PersonLogin", l);
        startActivity(intent);
     }
