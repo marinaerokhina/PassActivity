@@ -86,4 +86,8 @@ public class Person {
             Grades.set(i, grades.get(i));
         }
     }
+
+    public ArrayList<String> getGrades() {
+        return Grades;
+    }
 }

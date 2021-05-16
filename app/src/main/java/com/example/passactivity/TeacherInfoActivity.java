@@ -29,7 +29,7 @@ public class TeacherInfoActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_info);
+        setContentView(R.layout.activity_teacherinfo);
         listView = findViewById(R.id.list);
         request = findViewById(R.id.search_space);
         search = findViewById(R.id.bts_search);
