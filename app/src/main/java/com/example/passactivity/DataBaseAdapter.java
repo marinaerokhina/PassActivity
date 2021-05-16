@@ -38,8 +38,8 @@ public class DataBaseAdapter {
 
     public long insert(Person person) {
         ContentValues cv = new ContentValues();
-        cv.put(DataBaseHelper.COLUMN_NAME, person.getLogin());
-        cv.put(DataBaseHelper.COLUMN_NAME, person.getPassword());
+        cv.put(DataBaseHelper.COLUMN_LOGIN, person.getLogin());
+        cv.put(DataBaseHelper.COLUMN_PASSWORD, person.getPassword());
         cv.put(DataBaseHelper.COLUMN_NAME, person.getName());
         cv.put(DataBaseHelper.COLUMN_SURNAME, person.getSurname());
         cv.put(DataBaseHelper.COLUMN_STATUS, person.getStatus());
@@ -82,17 +82,19 @@ public class DataBaseAdapter {
         return  persons;
     }
 
-    public Person getPerson(long login) {
+    public Person getPerson(long id) {
         Person person = null;
         String query = String.format("SELECT * FROM %s WHERE %s=?", DataBaseHelper.TABLE, DataBaseHelper.COLUMN_LOGIN);
-        Cursor cursor = database.rawQuery(query, new String[]{String.valueOf(login)});
+        Cursor cursor = database.rawQuery(query, new String[]{String.valueOf(id)});
         if (cursor.moveToFirst()) {
+            String login = cursor.getString(cursor.getColumnIndex(DataBaseHelper.COLUMN_LOGIN));;
             String name = cursor.getString(cursor.getColumnIndex(DataBaseHelper.COLUMN_NAME));
             String surname = cursor.getString(cursor.getColumnIndex(DataBaseHelper.COLUMN_SURNAME));
             String password = cursor.getString(cursor.getColumnIndex(DataBaseHelper.COLUMN_PASSWORD));
             String status = cursor.getString(cursor.getColumnIndex(DataBaseHelper.COLUMN_STATUS));
             String grade = cursor.getString(cursor.getColumnIndex(DataBaseHelper.COLUMN_GRADE));
             int age = cursor.getInt(cursor.getColumnIndex(DataBaseHelper.COLUMN_AGE));
+
             person = new Person(login, password, name, surname, status, grade, age);
         }
         cursor.close();

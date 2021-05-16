@@ -24,6 +24,7 @@
     <string name="grade_error1">ERROR. NO SUCH GRADE EXISTS</string>
     <string name="grade_error2">ERROR. GRADESPACE IS EMPTY</string>
     <string name="reg_success">YOU REGISTERED SUCCESSFULLY!</string>
+    <string name="reg_error">ERROR HAPENNED. CHECK INFORMATION YOU FILLED IN</string>
     <string name="log_success">YOU LOGGED IN SUCCESSFULLY!</string>
     <string name="log_error1">ERROR. SPACE FOR LOGIN OR PASSWORD IS EMPTY</string>
     <string name="log_error2">ERROR. CHECK YOUR LOGIN AND PASSWORD</string>
