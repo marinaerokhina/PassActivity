@@ -36,4 +36,5 @@
     <string name="your_information">YOUR INFORMATION</string>
     <string name="search_error">NOTHING WAS FOUND. PLEASE, CHECK YOUR REQUEST FOR MISTAKES</string>
     <string name="search_success">SOMETHING WAS FOUND. CONGRATULATIONS!</string>
+    <string name="temp_text">THIS ACTION TEMPORARY LOCKED</string>
 </resources>
