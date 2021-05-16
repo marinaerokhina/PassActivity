@@ -1,5 +1,6 @@
 package com.example.passactivity;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.widget.TextView;
 
@@ -10,7 +11,7 @@ import java.util.List;
 
 public class InfActivity extends AppCompatActivity {
     String l;
-    TextView login, password, status, name, surname, grade, age;
+    TextView login, password, status, name, surname, grade, age, warning;
     String p, st, n, s, g;
     int a;
     DataBaseAdapter dataBaseAdapter;
@@ -27,6 +28,7 @@ public class InfActivity extends AppCompatActivity {
         status = findViewById(R.id.status);
         grade = findViewById(R.id.grade);
         age = findViewById(R.id.age);
+        warning = findViewById(R.id.warning);
         personList = new ArrayList<>();
         personList = dataBaseAdapter.getPersons();
         for (int i = 0; i <personList.size() ; i++) {
@@ -46,6 +48,7 @@ public class InfActivity extends AppCompatActivity {
         status.setText(s);
         grade.setText(g);
         age.setText(a);
+        warning.setText("@string/warning_change_params");
     }
 
 }

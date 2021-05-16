@@ -28,4 +28,5 @@
     <string name="log_success">YOU LOGGED IN SUCCESSFULLY!</string>
     <string name="log_error1">ERROR. SPACE FOR LOGIN OR PASSWORD IS EMPTY</string>
     <string name="log_error2">ERROR. CHECK YOUR LOGIN AND PASSWORD</string>
+    <string name="warning_change_params">IF YOU WANT TO CHANGE INFORMATION OF YOUR ACCOUNT, PLEASE, ASK ADMINISTRATOR OF THIS APP IN YOUR ORGANISATION</string>
 </resources>

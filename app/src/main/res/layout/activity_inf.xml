@@ -78,4 +78,15 @@
         android:id="@+id/age"
         android:textSize="30sp"
     />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/warning"
+        android:textSize="30sp"
+        />
 </LinearLayout>
