@@ -16,9 +16,19 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".RegistActivity"/>
+        <activity android:name=".AccActivity"/>
+        <activity android:name=".AdminHomeActivity"/>
+        <activity android:name=".ConfirmActivity"/>
+        <activity android:name=".GradeActivity"/>
         <activity android:name=".HomeActivity"/>
+        <activity android:name=".InfoActivity"/>
+        <activity android:name=".RegistActivity"/>
+        <activity android:name=".StudentsActivity"/>
         <activity android:name=".TableActivity"/>
+        <activity android:name=".TeacherAccActivity"/>
+        <activity android:name=".TeacherHomeActivity"/>
+        <activity android:name=".TeacherInfoActivity"/>
+        <activity android:name=".TeachersActivity"/>
     </application>
 
 </manifest>
