@@ -1,14 +1,14 @@
 <resources>
-    <string name="app_name">PassActivity</string>
-    <string name="your_name">YOUR NAME</string>
-    <string name="your_surname">YOUR SURNAME</string>
-    <string name="your_grade">YOUR GRADE</string>
-    <string name="status">TEACHER/ADMIN/STUDENT</string>
-    <string name="your_age">YOUR AGE</string>
-    <string name="your_login">YOUR LOGIN</string>
-    <string name="your_password">YOUR PASSWORD</string>
-    <string name="login">LOGIN</string>
-    <string name="password">PASSWORD</string>
+    <string name="app_name" translatable="false">PassActivity</string>
+    <string name="your_name" translatable="false">YOUR NAME</string>
+    <string name="your_surname" translatable="false">YOUR SURNAME</string>
+    <string name="your_grade" translatable="false">YOUR GRADE</string>
+    <string name="status" translatable="false">TEACHER/ADMIN/STUDENT</string>
+    <string name="your_age" translatable="false">YOUR AGE</string>
+    <string name="your_login" translatable="false">YOUR LOGIN</string>
+    <string name="your_password" translatable="false">YOUR PASSWORD</string>
+    <string name="login" translatable="false">LOGIN</string>
+    <string name="password" translatable="false">PASSWORD</string>
     <string name="log_in">LOG IN</string>
     <string name="registrate">Registrate</string>
     <string name="name_error">ERROR. NAMESPACE IS EMPTY</string>
