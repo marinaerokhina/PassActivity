@@ -6,11 +6,11 @@
               android:layout_width="match_parent"
               android:layout_height="match_parent">
 
-    <Button
+    <!--<Button
             android:text="MAIN TABLE"
             android:onClick="openTable"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" android:id="@+id/button"/>
+            android:layout_height="wrap_content" android:id="@+id/button"/>-->
     <Button
             android:text="@string/your_account"
             android:onClick="openAccount"

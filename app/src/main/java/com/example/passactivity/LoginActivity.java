@@ -52,10 +52,14 @@ public class LoginActivity extends AppCompatActivity {
                 Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
                 intent.putExtra("PersonLogin", l);
                 startActivity(intent);
-                } else if (){
-
-                } else if(){
-
+                } else if (personList.get(i).getStatus().equals("@string/status1")){
+                    Intent intent = new Intent(LoginActivity.this, TeacherHomeActivity.class);
+                    intent.putExtra("PersonLogin", l);
+                    startActivity(intent);
+                } else if(personList.get(i).getStatus().equals("@string/status2")){
+                    Intent intent = new Intent(LoginActivity.this, AdminHomeActivity.class);
+                    intent.putExtra("PersonLogin", l);
+                    startActivity(intent);
                 } else {
                     Toast.makeText(this, "@string/log_error3", Toast.LENGTH_LONG).show();
                 }
