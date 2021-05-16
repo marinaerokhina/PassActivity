@@ -28,7 +28,7 @@ public class StudentsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_students);
         g = getIntent().getStringExtra("Grade");
-        listView = findViewById(R.id.list);
+        listView = findViewById(R.id.students);
         request = findViewById(R.id.search_space);
         personList = new ArrayList<Person>();
         dataBaseHelper = new DataBaseHelper(getApplicationContext());
