@@ -47,4 +47,5 @@ public class InfActivity extends AppCompatActivity {
         grade.setText(g);
         age.setText(a);
     }
+
 }
