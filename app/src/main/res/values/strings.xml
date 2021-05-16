@@ -33,4 +33,6 @@
     <string name="intable_search">SEARCH</string>
     <string name="your_account">YOUR ACCOUNT</string>
     <string name="your_information">YOUR INFORMATION</string>
+    <string name="search_error">NOTHING WAS FOUND. PLEASE, CHECK YOUR REQUEST FOR MISTAKES</string>
+    <string name="search_success">SOMETHING WAS FOUND. CONGRATULATION!</string>
 </resources>
