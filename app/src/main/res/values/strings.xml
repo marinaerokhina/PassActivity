@@ -13,9 +13,9 @@
     <string name="registrate">Registrate</string>
     <string name="name_error">ERROR. NAMESPACE IS EMPTY</string>
     <string name="surname_error">ERROR. SURNAMESPACE IS EMPTY</string>
-    <string name="status1">Teacher</string>
-    <string name="status2">Admin</string>
-    <string name="status3">Student</string>
+    <string name="status1">TEACHER</string>
+    <string name="status2">ADMIN</string>
+    <string name="status3">STUDENT</string>
     <string name="status_error">ERROR. THERE\'S NO SUCH STATUS</string>
     <string name="login_error">ERROR. LOGINCASE IS EMPTY</string>
     <string name="password_error">ERROR. PASSWORDCASE IS EMPTY</string>
@@ -37,4 +37,8 @@
     <string name="search_error">NOTHING WAS FOUND. PLEASE, CHECK YOUR REQUEST FOR MISTAKES</string>
     <string name="search_success">SOMETHING WAS FOUND. CONGRATULATIONS!</string>
     <string name="temp_text">THIS ACTION TEMPORARILY LOCKED</string>
+    <string name="hint_confirm">TYPE ADMIN CODE TO CONFIRM YOUR ACCOUNT</string>
+    <string name="admin_confirm">CONFIRM ACCOUNT</string>
+    <string name="conf_success">CONFIRMED SUCCESSFULLY!</string>
+    <string name="conf_error">PROBLEM WITH CONFIRMING. PLEASE, CHECK THE CODE YOU TYPED</string>
 </resources>

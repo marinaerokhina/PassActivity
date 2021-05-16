@@ -1,6 +1,6 @@
 package com.example.passactivity;
 
-import android.widget.EditText;
+import java.util.ArrayList;
 
 public class Person {
     private String Login;
@@ -10,6 +10,7 @@ public class Person {
     private String Status;
     private String Grade;
     private int Age;
+    private ArrayList<String> Grades = new ArrayList<>();
 
     public Person(String login, String password, String name, String surname, String status, String grade, int age) {
         Login = login;
@@ -78,5 +79,11 @@ public class Person {
 
     public String getGrade() {
         return Grade;
+    }
+
+    public void setGrades(ArrayList<String> grades) {
+        for (int i = 0; i < grades.size() ; i++) {
+            Grades.set(i, grades.get(i));
+        }
     }
 }

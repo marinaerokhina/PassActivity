@@ -92,9 +92,21 @@ public class RegistActivity extends AppCompatActivity {
         }
         if (cnt == cnt0) {
             Toast.makeText(this, "@string/reg_success", Toast.LENGTH_LONG).show();
-            dbadapter.insert(person);
-            Intent intent = new Intent(RegistActivity.this, LoginActivity.class);
-            startActivity(intent);
+            if (Status.equals("@string/status1")){
+                dbadapter.insert(person);
+                Intent intent = new Intent(RegistActivity.this, GradeActivity.class);
+                intent.putExtra("Person", person.getLogin());
+                startActivity(intent);
+            } else if (Status.equals("@string/status3")){
+                dbadapter.insert(person);
+                Intent intent = new Intent(RegistActivity.this, LoginActivity.class);
+                startActivity(intent);
+            } else {
+                dbadapter.insert(person);
+                Intent intent = new Intent(RegistActivity.this, ConfirmActivity.class);
+                intent.putExtra("Person", person.getLogin());
+                startActivity(intent);
+            }
         } else {
             Toast.makeText(this, "@string/reg_error", Toast.LENGTH_LONG).show();
         }
