@@ -52,6 +52,7 @@ public class StudentsActivity extends AppCompatActivity {
                 adapter.close();
             }
         }catch (SQLException e) {
+
         }
     }
     protected void onDestroy() {

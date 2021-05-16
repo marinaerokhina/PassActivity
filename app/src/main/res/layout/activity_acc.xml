@@ -9,6 +9,18 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:id="@+id/warning"
+        android:textSize="50dp"
+        android:textColor="@color/red"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:id="@+id/login"
         android:textSize="30sp"
     />
@@ -83,11 +95,11 @@
         android:layout_height="wrap_content"
         android:textSize="15sp"
         />
-    <TextView
+    <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/warning"
-        android:textSize="30sp"
-        android:textColor="@color/red"
+        android:id="@+id/btn"
+        android:text="@string/the_list_of_teachers"
+        android:onClick="ShowTeacherList"
         />
 </LinearLayout>
