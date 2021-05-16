@@ -1,6 +1,9 @@
 package com.example.passactivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -50,5 +53,14 @@ public class TeacherAccActivity extends AppCompatActivity {
         listgrades.setAdapter(gradeAdapter);
         age.setText(a);
         warning.setText("@string/warning_change_params");
+        listgrades.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                String Grade = gradeAdapter.getItem(position);
+                Intent intent = new Intent(getApplicationContext(), StudentsActivity.class);
+                intent.putExtra("Grade", Grade);
+                startActivity(intent);
+            }
+        });
     }
 }

@@ -46,4 +46,5 @@
     <string name="finish_addgrades">IF YOU ADDED ALL GRADES, PLEASE, CLICK THIS BUTTON</string>
     <string name="grades_error">ERROR. YOU NOT FILLED THE GAP</string>
     <string name="grades_success">YOU FILLED GRADES SUCCESSFULLY!</string>
+    <string name="grade_error">ERROR OCCURRED, PLEASE, ASK ADMINISTATOR FOR HELP</string>
 </resources>
