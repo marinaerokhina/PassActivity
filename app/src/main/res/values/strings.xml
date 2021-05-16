@@ -24,15 +24,16 @@
     <string name="grade_error1">ERROR. NO SUCH GRADE EXISTS</string>
     <string name="grade_error2">ERROR. GRADESPACE IS EMPTY</string>
     <string name="reg_success">YOU REGISTERED SUCCESSFULLY!</string>
-    <string name="reg_error">ERROR HAPENNED. CHECK INFORMATION YOU FILLED IN</string>
+    <string name="reg_error">ERROR HAPPENED. CHECK INFORMATION YOU FILLED IN</string>
     <string name="log_success">YOU LOGGED IN SUCCESSFULLY!</string>
     <string name="log_error1">ERROR. SPACE FOR LOGIN OR PASSWORD IS EMPTY</string>
     <string name="log_error2">ERROR. CHECK YOUR LOGIN AND PASSWORD</string>
+    <string name="log_error3">ERROR. SOME PROBLEMS WITH YOUR ACCOUNT. PLEASE, ASK ADMINISTRATOR OF THIS APP IN YOUR ORGANISATION FOR HELP</string>
     <string name="warning_change_params">IF YOU WANT TO CHANGE INFORMATION OF YOUR ACCOUNT, PLEASE, ASK ADMINISTRATOR OF THIS APP IN YOUR ORGANISATION</string>
     <string name="table_request">YOUR REQUEST</string>
     <string name="intable_search">SEARCH</string>
     <string name="your_account">YOUR ACCOUNT</string>
     <string name="your_information">YOUR INFORMATION</string>
     <string name="search_error">NOTHING WAS FOUND. PLEASE, CHECK YOUR REQUEST FOR MISTAKES</string>
-    <string name="search_success">SOMETHING WAS FOUND. CONGRATULATION!</string>
+    <string name="search_success">SOMETHING WAS FOUND. CONGRATULATIONS!</string>
 </resources>
