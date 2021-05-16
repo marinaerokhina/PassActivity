@@ -60,7 +60,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
 
-    public void onRegistration(View view) {
+    public void onRegistrate(View view) {
         Intent intent = new Intent(LoginActivity.this, RegistActivity.class);
         startActivity(intent);
     }

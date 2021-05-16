@@ -23,6 +23,7 @@
             android:id="@+id/Password"
             android:hint="@string/password"
             android:gravity="center"
+            android:inputType="textPassword"
             android:textSize="30sp"
     />
     <Button
