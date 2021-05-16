@@ -48,4 +48,6 @@
     <string name="grades_success">YOU FILLED GRADES SUCCESSFULLY!</string>
     <string name="grade_error">ERROR OCCURRED, PLEASE, ASK ADMINISTATOR FOR HELP</string>
     <string name="the_list_of_teachers">THE LIST OF TEACHERS</string>
+    <string name="new_admin_code">TYPE NEW ADMIN CODE</string>
+    <string name="save_code">SAVE CODE</string>
 </resources>

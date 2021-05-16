@@ -1,5 +1,6 @@
 package com.example.passactivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
@@ -21,5 +22,11 @@ public class AdminHomeActivity extends AppCompatActivity {
 
     public void openAdminInf(View view) {
         Toast.makeText(this, "@string/temp_text", Toast.LENGTH_LONG).show();
+    }
+
+    public void editConfirmCode(View view) {
+        Intent intent = new Intent(AdminHomeActivity.this, EditCodeActivity.class);
+        intent.putExtra("PersonLogin", l);
+        startActivity(intent);
     }
 }

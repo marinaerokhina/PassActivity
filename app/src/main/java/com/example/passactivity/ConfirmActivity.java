@@ -10,7 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class ConfirmActivity extends AppCompatActivity {
     EditText edit;
-    String admin_code="ADmIniSTRAtor", editcode;
+    String admin_code, editcode;
     String l;
     int k=0;
     DataBaseAdapter adapter;
@@ -20,6 +20,8 @@ public class ConfirmActivity extends AppCompatActivity {
         setContentView(R.layout.activity_confirm);
         edit=findViewById(R.id.codeconf);
         l = getIntent().getStringExtra("Person");
+        ConfirmCode confirmCode = new ConfirmCode();
+        admin_code = confirmCode.getCode();
     }
 
     public void ConfirmPerson(View view) {
