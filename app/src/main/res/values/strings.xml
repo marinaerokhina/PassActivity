@@ -58,4 +58,7 @@
     <string name="Status">STATUS</string>
     <string name="grade">GRADE</string>
     <string name="age">AGE</string>
+    <string name="show_the_list_of_students">SHOW THE LIST OF STUDENTS</string>
+    <string name="show_students">SHOW STUDENTS\' LIST</string>
+    <string name="change_grade">CHANGE GRADE</string>
 </resources>

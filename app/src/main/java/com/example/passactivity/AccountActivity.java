@@ -66,9 +66,4 @@ public class AccountActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void ShowStudentsList(View view) {
-        /*Intent intent = new Intent(getApplicationContext(), StudActivity.class);
-        intent.putExtra("Login", l);
-        startActivity(intent);*/
-    }
 }

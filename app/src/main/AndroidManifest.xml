@@ -17,13 +17,17 @@
             </intent-filter>
         </activity>
         <activity android:name=".AccActivity"/>
+        <activity android:name=".AccountActivity"/>
         <activity android:name=".AdminHomeActivity"/>
+        <activity android:name=".ChoiceActivity"/>
         <activity android:name=".ConfirmActivity"/>
         <activity android:name=".EditCodeActivity"/>
         <activity android:name=".GradeActivity"/>
+        <activity android:name=".GradesActivity"/>
         <activity android:name=".HomeActivity"/>
         <activity android:name=".InfoActivity"/>
         <activity android:name=".RegistActivity"/>
+        <activity android:name=".StudActivity"/>
         <activity android:name=".StudentsActivity"/>
         <activity android:name=".TableActivity"/>
         <activity android:name=".TeacherAccActivity"/>
