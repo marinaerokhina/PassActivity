@@ -39,7 +39,7 @@ public class TableActivity extends AppCompatActivity {
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                     Person person = personAdapter.getItem(position);
-                    Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
+                    Intent intent = new Intent(getApplicationContext(), AccountActivity.class);
                     intent.putExtra("login", person.getLogin());
                     startActivity(intent);
                 }

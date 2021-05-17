@@ -21,7 +21,8 @@ public class AdminHomeActivity extends AppCompatActivity {
     }
 
     public void openAdminInf(View view) {
-        Toast.makeText(this, "@string/temp_text", Toast.LENGTH_LONG).show();
+        Intent intent = new Intent(getApplicationContext(), TableActivity.class);
+        startActivity(intent);
     }
 
     public void editConfirmCode(View view) {
