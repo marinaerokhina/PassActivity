@@ -17,7 +17,7 @@ public class AdminHomeActivity extends AppCompatActivity {
     }
 
     public void openAdminAccount(View view) {
-        Toast.makeText(this, "@string/temp_text", Toast.LENGTH_LONG).show();
+        Toast.makeText(this, R.string.temp_text, Toast.LENGTH_LONG).show();
     }
 
     public void openAdminInf(View view) {

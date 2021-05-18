@@ -27,12 +27,12 @@ public class ConfirmActivity extends AppCompatActivity {
     public void ConfirmPerson(View view) {
         editcode= edit.getText().toString();
         if (editcode.equals(admin_code)){
-            Toast.makeText(this, "@string/conf_success", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, R.string.conf_success, Toast.LENGTH_LONG).show();
             k++;
             Intent intent = new Intent(ConfirmActivity.this, LoginActivity.class);
             startActivity(intent);
         } else {
-            Toast.makeText(this, "@string/conf_error", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, R.string.conf_error, Toast.LENGTH_LONG).show();
         }
     }
 

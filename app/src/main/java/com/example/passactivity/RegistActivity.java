@@ -40,7 +40,18 @@ public class RegistActivity extends AppCompatActivity {
         String age1 = age.getText().toString();
         int Age = Integer.parseInt(age1);
         Person person = new Person();
-        if (Name != null) {
+        try {
+            person.setLogin(Login);
+            person.setPassword(Password);
+            person.setName(Name);
+            person.setSurname(Surname);
+            person.setStatus(Status);
+            person.setGrade(Grade);
+            person.setAge(Age);
+        } catch (Exception e){
+            Toast.makeText(this, R.string.reg_error, Toast.LENGTH_LONG).show();
+        }
+      /*  if (Name != null) {
             person.setName(Name);
             cnt++;
         } else {
@@ -89,26 +100,22 @@ public class RegistActivity extends AppCompatActivity {
             cnt++;
         } else {
             Toast.makeText(this, "@string/grade_error2", Toast.LENGTH_LONG).show();
-        }
-        if (cnt == cnt0) {
-            Toast.makeText(this, "@string/reg_success", Toast.LENGTH_LONG).show();
-            if (Status.equals("@string/status1")){
-                dbadapter.insert(person);
-                Intent intent = new Intent(RegistActivity.this, GradeActivity.class);
-                intent.putExtra("Person", person.getLogin());
-                startActivity(intent);
-            } else if (Status.equals("@string/status3")){
-                dbadapter.insert(person);
-                Intent intent = new Intent(RegistActivity.this, LoginActivity.class);
-                startActivity(intent);
-            } else {
-                dbadapter.insert(person);
-                Intent intent = new Intent(RegistActivity.this, ConfirmActivity.class);
-                intent.putExtra("Person", person.getLogin());
-                startActivity(intent);
-            }
+        }*/
+        Toast.makeText(this, R.string.reg_success, Toast.LENGTH_LONG).show();
+        if (person.getStatus().equals(R.string.status1)){
+            dbadapter.insert(person);
+            Intent intent = new Intent(RegistActivity.this, GradeActivity.class);
+            intent.putExtra("Person", person.getLogin());
+            startActivity(intent);
+        } else if (person.getStatus().equals(R.string.status3)){
+            dbadapter.insert(person);
+            Intent intent = new Intent(RegistActivity.this, LoginActivity.class);
+            startActivity(intent);
         } else {
-            Toast.makeText(this, "@string/reg_error", Toast.LENGTH_LONG).show();
+            dbadapter.insert(person);
+            Intent intent = new Intent(RegistActivity.this, ConfirmActivity.class);
+            intent.putExtra("Person", person.getLogin());
+            startActivity(intent);
         }
     }
 }

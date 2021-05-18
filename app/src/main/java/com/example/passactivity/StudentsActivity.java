@@ -48,7 +48,7 @@ public class StudentsActivity extends AppCompatActivity {
                 adapter.close();
 
             } else {
-                Toast.makeText(this, "@string/grade_error", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, R.string.grade_error, Toast.LENGTH_LONG).show();
                 adapter.close();
             }
         }catch (SQLException e) {

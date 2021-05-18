@@ -52,7 +52,7 @@ public class TeacherAccActivity extends AppCompatActivity {
         status.setText(s);
         listgrades.setAdapter(gradeAdapter);
         age.setText(a);
-        warning.setText("@string/warning_change_params");
+        warning.setText(R.string.warning_change_params);
         listgrades.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {

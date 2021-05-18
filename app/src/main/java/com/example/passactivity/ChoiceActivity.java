@@ -16,10 +16,10 @@ public class ChoiceActivity  extends AppCompatActivity {
     }
 
     public void ShowStudentsList(View view) {
-        Toast.makeText(this, "@string/temp_text", Toast.LENGTH_LONG).show();
+        Toast.makeText(this, R.string.temp_text, Toast.LENGTH_LONG).show();
     }
 
     public void ChangeGrade(View view) {
-        Toast.makeText(this, "@string/temp_text", Toast.LENGTH_LONG).show();
+        Toast.makeText(this, R.string.temp_text, Toast.LENGTH_LONG).show();
     }
 }

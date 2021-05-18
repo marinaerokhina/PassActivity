@@ -44,7 +44,7 @@ public class AccActivity extends AppCompatActivity {
         status.setText(s);
         grade.setText(g);
         age.setText(a);
-        warning.setText("@string/warning_change_params");
+        warning.setText(R.string.warning_change_params);
     }
 
     public void ShowTeacherList(View view) {

@@ -77,13 +77,13 @@ public class InfoActivity extends AppCompatActivity {
                 }
             }
             if (k>0) {
-                Toast.makeText(this, "@string/search_success", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, R.string.search_success, Toast.LENGTH_LONG).show();
                 personAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, personList);
                 listView.setAdapter(personAdapter);
                 adapter.close();
 
             } else {
-                Toast.makeText(this, "@string/search_error", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, R.string.search_error, Toast.LENGTH_LONG).show();
                 adapter.close();
             }
         }catch (SQLException e) {

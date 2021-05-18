@@ -30,14 +30,14 @@ public class GradeActivity extends AppCompatActivity {
         if (grade != null){
             gradeList.add(grade);
         } else {
-            Toast.makeText(this, "@string/grades_error", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, R.string.grades_error, Toast.LENGTH_LONG).show();
         }
     }
 
     public void FinishAdd(View view) {
         Person person = adapter.getPerson(l);
         person.setGrades(gradeList);
-        Toast.makeText(this, "@string/grades_success", Toast.LENGTH_LONG).show();
+        Toast.makeText(this, R.string.grades_success, Toast.LENGTH_LONG).show();
         Intent intent = new Intent (GradeActivity.this, LoginActivity.class);
         startActivity(intent);
     }
