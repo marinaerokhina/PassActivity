@@ -1,6 +1,7 @@
 package com.example.passactivity;
 
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -17,6 +18,8 @@ public class RegistActivity extends AppCompatActivity {
     EditText name, surname, status, login, password, age, grade;
     int cnt = 0, cnt0 = 7;
     DataBaseAdapter dbadapter;
+    DataBaseHelper dataBaseHelper;
+    SQLiteDatabase db;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,6 +31,8 @@ public class RegistActivity extends AppCompatActivity {
         password = findViewById(R.id.Password);
         age = findViewById(R.id.Age);
         grade = findViewById(R.id.Grade);
+        dataBaseHelper = new DataBaseHelper(getApplicationContext());
+        dataBaseHelper.create_db();
     }
 
     public void onRegistration(View view) {
@@ -107,16 +112,26 @@ public class RegistActivity extends AppCompatActivity {
             Intent intent = new Intent(RegistActivity.this, GradeActivity.class);
             intent.putExtra("Person", person.getLogin());
             startActivity(intent);
+            finish();
         } else if (person.getStatus().equals(R.string.status3)){
             dbadapter.insert(person);
             Intent intent = new Intent(RegistActivity.this, LoginActivity.class);
             startActivity(intent);
+            finish();
         } else {
             dbadapter.insert(person);
             Intent intent = new Intent(RegistActivity.this, ConfirmActivity.class);
             intent.putExtra("Person", person.getLogin());
             startActivity(intent);
+            finish();
         }
+    }
+
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        db.close();
     }
 }
 

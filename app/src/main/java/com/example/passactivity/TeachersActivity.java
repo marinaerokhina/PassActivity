@@ -24,7 +24,7 @@ public class TeachersActivity extends AppCompatActivity {
     ArrayAdapter<Person> personAdapter;
     DataBaseHelper dataBaseHelper;
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_teachers);
         g = getIntent().getStringExtra("PersonGrade");
@@ -68,6 +68,7 @@ public class TeachersActivity extends AppCompatActivity {
 
         }
     }
+    @Override
     protected void onDestroy() {
         super.onDestroy();
         db.close();

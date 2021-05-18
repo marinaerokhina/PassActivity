@@ -1,6 +1,7 @@
 package com.example.passactivity;
 
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.widget.Button;
 import android.widget.Toast;
 
@@ -26,6 +27,8 @@ public class LoginActivity extends AppCompatActivity {
     String p;
     DataBaseAdapter dataBaseAdapter;
     List<Person> personList;
+    DataBaseHelper dataBaseHelper;
+    SQLiteDatabase db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +39,8 @@ public class LoginActivity extends AppCompatActivity {
         login = findViewById(R.id.Login);
         password = findViewById(R.id.Password);
         personList = new ArrayList<>();
-
+        dataBaseHelper = new DataBaseHelper(getApplicationContext());
+        dataBaseHelper.create_db();
     }
 
     public void CheckPerson(View view) {
@@ -52,14 +56,17 @@ public class LoginActivity extends AppCompatActivity {
                 Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
                 intent.putExtra("PersonLogin", l);
                 startActivity(intent);
+                    finish();
                 } else if (personList.get(i).getStatus().equals(R.string.status1)){
                     Intent intent = new Intent(LoginActivity.this, TeacherHomeActivity.class);
                     intent.putExtra("PersonLogin", l);
                     startActivity(intent);
+                    finish();
                 } else if(personList.get(i).getStatus().equals(R.string.status2)){
                     Intent intent = new Intent(LoginActivity.this, AdminHomeActivity.class);
                     intent.putExtra("PersonLogin", l);
                     startActivity(intent);
+                    finish();
                 } else {
                     Toast.makeText(this, R.string.log_error3, Toast.LENGTH_LONG).show();
                 }
@@ -75,5 +82,11 @@ public class LoginActivity extends AppCompatActivity {
     public void onRegistrate(View view) {
         Intent intent = new Intent(LoginActivity.this, RegistActivity.class);
         startActivity(intent);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        db.close();
     }
 }

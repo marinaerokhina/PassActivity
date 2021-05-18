@@ -1,6 +1,7 @@
 package com.example.passactivity;
 
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -15,11 +16,15 @@ public class AccountActivity extends AppCompatActivity {
     int a;
     DataBaseAdapter dataBaseAdapter;
     Person person;
+    DataBaseHelper dataBaseHelper;
+    SQLiteDatabase db;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_account);
         l=getIntent().getStringExtra("login");
+        dataBaseHelper = new DataBaseHelper(getApplicationContext());
+        dataBaseHelper.create_db();
         login = findViewById(R.id.login);
         password = findViewById(R.id.password);
         name = findViewById(R.id.name);
@@ -66,4 +71,9 @@ public class AccountActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        db.close();
+    }
 }

@@ -56,6 +56,7 @@ public class InfoActivity extends AppCompatActivity {
         }
     }
 
+    @Override
     protected void onDestroy() {
         super.onDestroy();
         db.close();
