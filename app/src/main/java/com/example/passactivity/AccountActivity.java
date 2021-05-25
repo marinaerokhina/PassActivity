@@ -13,7 +13,7 @@ public class AccountActivity extends AppCompatActivity {
     String l;
     EditText login, password, status, name, surname, grade, age;
     String p, st, n, s, g;
-    int a;
+    String a;
     DataBaseAdapter dataBaseAdapter;
     Person person;
     DataBaseHelper dataBaseHelper;
@@ -23,8 +23,11 @@ public class AccountActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_account);
         l=getIntent().getStringExtra("login");
+        dataBaseAdapter= new DataBaseAdapter(this);
         dataBaseHelper = new DataBaseHelper(getApplicationContext());
         dataBaseHelper.create_db();
+        dataBaseAdapter.open();
+        db = dataBaseHelper.open();
         login = findViewById(R.id.login);
         password = findViewById(R.id.password);
         name = findViewById(R.id.name);
@@ -55,7 +58,7 @@ public class AccountActivity extends AppCompatActivity {
         s=surname.getText().toString();
         st=status.getText().toString();
         g=grade.getText().toString();
-        a=Integer.parseInt(age.getText().toString());
+        a=age.getText().toString();
         person.setLogin(l);
         person.setPassword(p);
         person.setName(n);
@@ -74,6 +77,7 @@ public class AccountActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        dataBaseAdapter.close();
         db.close();
     }
 }

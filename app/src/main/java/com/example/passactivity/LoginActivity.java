@@ -39,8 +39,11 @@ public class LoginActivity extends AppCompatActivity {
         login = findViewById(R.id.Login);
         password = findViewById(R.id.Password);
         personList = new ArrayList<>();
+        dataBaseAdapter= new DataBaseAdapter(this);
         dataBaseHelper = new DataBaseHelper(getApplicationContext());
         dataBaseHelper.create_db();
+        dataBaseAdapter.open();
+        db = dataBaseHelper.open();
     }
 
     public void CheckPerson(View view) {
@@ -53,9 +56,9 @@ public class LoginActivity extends AppCompatActivity {
             if (l.equals(personList.get(i).getLogin()) && p.equals(personList.get(i).getPassword())) {
                 Toast.makeText(this, R.string.log_success, Toast.LENGTH_LONG).show();
                 if (personList.get(i).getStatus().equals(R.string.status3)){
-                Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
-                intent.putExtra("PersonLogin", l);
-                startActivity(intent);
+                    Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
+                    intent.putExtra("PersonLogin", l);
+                    startActivity(intent);
                     finish();
                 } else if (personList.get(i).getStatus().equals(R.string.status1)){
                     Intent intent = new Intent(LoginActivity.this, TeacherHomeActivity.class);
@@ -87,6 +90,7 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        dataBaseAdapter.close();
         db.close();
     }
 }

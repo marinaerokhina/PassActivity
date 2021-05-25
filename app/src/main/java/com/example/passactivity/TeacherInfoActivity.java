@@ -20,7 +20,7 @@ public class TeacherInfoActivity extends AppCompatActivity {
     ListView listView;
     EditText request;
     Button search;
-    DataBaseAdapter dbAdapter;
+    DataBaseAdapter adapter;
     List<Person> personList;
     SQLiteDatabase db;
     ArrayAdapter<Person> personAdapter;
@@ -44,7 +44,7 @@ public class TeacherInfoActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         try {
-            DataBaseAdapter adapter = new DataBaseAdapter(this);
+            adapter = new DataBaseAdapter(this);
             adapter.open();
             db = dataBaseHelper.open();
             List<Person> personList = adapter.getPersons();
@@ -58,6 +58,7 @@ public class TeacherInfoActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        adapter.close();
         db.close();
     }
 
@@ -65,7 +66,7 @@ public class TeacherInfoActivity extends AppCompatActivity {
         req=request.getText().toString();
         int k=0;
         try {
-            DataBaseAdapter adapter = new DataBaseAdapter(this);
+            adapter = new DataBaseAdapter(this);
             adapter.open();
             db = dataBaseHelper.open();
             List<Person> personList = adapter.getPersons();

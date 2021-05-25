@@ -75,7 +75,7 @@ public class DataBaseAdapter {
             String surname = cursor.getString(cursor.getColumnIndex(DataBaseHelper.COLUMN_SURNAME));
             String status = cursor.getString(cursor.getColumnIndex(DataBaseHelper.COLUMN_STATUS));
             String grade = cursor.getString(cursor.getColumnIndex(DataBaseHelper.COLUMN_GRADE));
-            int age = cursor.getInt(cursor.getColumnIndex(DataBaseHelper.COLUMN_AGE));
+            String age = cursor.getString(cursor.getColumnIndex(DataBaseHelper.COLUMN_AGE));
             persons.add(new Person(login, password, name, surname, status, grade, age));
         }
         cursor.close();
@@ -93,7 +93,7 @@ public class DataBaseAdapter {
             String password = cursor.getString(cursor.getColumnIndex(DataBaseHelper.COLUMN_PASSWORD));
             String status = cursor.getString(cursor.getColumnIndex(DataBaseHelper.COLUMN_STATUS));
             String grade = cursor.getString(cursor.getColumnIndex(DataBaseHelper.COLUMN_GRADE));
-            int age = cursor.getInt(cursor.getColumnIndex(DataBaseHelper.COLUMN_AGE));
+            String age = cursor.getString(cursor.getColumnIndex(DataBaseHelper.COLUMN_AGE));
 
             person = new Person(login, password, name, surname, status, grade, age);
         }

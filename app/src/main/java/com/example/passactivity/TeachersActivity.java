@@ -17,7 +17,7 @@ public class TeachersActivity extends AppCompatActivity {
     String g;
     int k=0, l=0;
     ListView listView;
-    DataBaseAdapter dbAdapter;
+    DataBaseAdapter adapter;
     List<Person> personList;
     ArrayList<String> gradeList;
     SQLiteDatabase db;
@@ -34,7 +34,7 @@ public class TeachersActivity extends AppCompatActivity {
         dataBaseHelper = new DataBaseHelper(getApplicationContext());
         dataBaseHelper.create_db();
         try {
-            DataBaseAdapter adapter = new DataBaseAdapter(this);
+            adapter = new DataBaseAdapter(this);
             adapter.open();
             db = dataBaseHelper.open();
             List<Person> personList = adapter.getPersons();
@@ -74,4 +74,3 @@ public class TeachersActivity extends AppCompatActivity {
         db.close();
     }
 }
-

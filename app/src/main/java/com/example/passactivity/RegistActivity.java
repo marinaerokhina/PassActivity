@@ -3,6 +3,7 @@ package com.example.passactivity;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -17,9 +18,10 @@ import com.example.passactivity.R;
 public class RegistActivity extends AppCompatActivity {
     EditText name, surname, status, login, password, age, grade;
     int cnt = 0, cnt0 = 7;
-    DataBaseAdapter dbadapter;
+    DataBaseAdapter dbAdapter;
     DataBaseHelper dataBaseHelper;
     SQLiteDatabase db;
+    final  static String LOG_TAG = "MYLOG";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,8 +33,11 @@ public class RegistActivity extends AppCompatActivity {
         password = findViewById(R.id.Password);
         age = findViewById(R.id.Age);
         grade = findViewById(R.id.Grade);
+        dbAdapter= new DataBaseAdapter(this);
         dataBaseHelper = new DataBaseHelper(getApplicationContext());
         dataBaseHelper.create_db();
+        dbAdapter.open();
+        db = dataBaseHelper.open();
     }
 
     public void onRegistration(View view) {
@@ -42,8 +47,8 @@ public class RegistActivity extends AppCompatActivity {
         String Status = status.getText().toString();
         String Login = login.getText().toString();
         String Grade = grade.getText().toString();
-        String age1 = age.getText().toString();
-        int Age = Integer.parseInt(age1);
+        String Age = age.getText().toString();
+
         Person person = new Person();
         try {
             person.setLogin(Login);
@@ -108,18 +113,20 @@ public class RegistActivity extends AppCompatActivity {
         }*/
         Toast.makeText(this, R.string.reg_success, Toast.LENGTH_LONG).show();
         if (person.getStatus().equals(R.string.status1)){
-            dbadapter.insert(person);
+            dbAdapter.insert(person);
             Intent intent = new Intent(RegistActivity.this, GradeActivity.class);
             intent.putExtra("Person", person.getLogin());
             startActivity(intent);
             finish();
         } else if (person.getStatus().equals(R.string.status3)){
-            dbadapter.insert(person);
+            dbAdapter.insert(person);
             Intent intent = new Intent(RegistActivity.this, LoginActivity.class);
             startActivity(intent);
             finish();
         } else {
-            dbadapter.insert(person);
+
+            Log.d(LOG_TAG,"PERSON " + person.toString());
+            dbAdapter.insert(person);
             Intent intent = new Intent(RegistActivity.this, ConfirmActivity.class);
             intent.putExtra("Person", person.getLogin());
             startActivity(intent);
@@ -131,7 +138,7 @@ public class RegistActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        dbAdapter.close();
         db.close();
     }
 }
-

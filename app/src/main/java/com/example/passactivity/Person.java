@@ -9,10 +9,10 @@ public class Person {
     private String Surname;
     private String Status;
     private String Grade;
-    private int Age;
+    private String Age;
     private ArrayList<String> Grades = new ArrayList<>();
 
-    public Person(String login, String password, String name, String surname, String status, String grade, int age) {
+    public Person(String login, String password, String name, String surname, String status, String grade,  String age) {
         Login = login;
         Password = password;
         Name = name;
@@ -45,7 +45,7 @@ public class Person {
         Password = password;
     }
 
-    public void setAge(int age) {
+    public void setAge(String age) {
         Age = age;
     }
 
@@ -73,7 +73,7 @@ public class Person {
         return Password;
     }
 
-    public int getAge() {
+    public String getAge() {
         return Age;
     }
 
@@ -85,6 +85,18 @@ public class Person {
         for (int i = 0; i < grades.size() ; i++) {
             Grades.set(i, grades.get(i));
         }
+    }
+    @Override
+    public String toString() {
+        return "Person{" +
+                "Login='" + Login + '\'' +
+                ", Password='" + Password + '\'' +
+                ", Name='" + Name + '\'' +
+                ", Surname='" + Surname + '\'' +
+                ", Status='" + Status + '\'' +
+                ", Grade='" + Grade + '\'' +
+                ", Age=" + Age +
+                '}';
     }
 
     public ArrayList<String> getGrades() {
