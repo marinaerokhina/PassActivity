@@ -114,7 +114,7 @@ public class RegistActivity extends AppCompatActivity {
         Toast.makeText(this, R.string.reg_success, Toast.LENGTH_LONG).show();
         if (person.getStatus().equals(R.string.status1)){
             dbAdapter.insert(person);
-            Intent intent = new Intent(RegistActivity.this, GradeActivity.class);
+            Intent intent = new Intent(RegistActivity.this, TeacherHomeActivity.class);
             intent.putExtra("Person", person.getLogin());
             startActivity(intent);
             finish();

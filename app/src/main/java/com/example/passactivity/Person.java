@@ -10,7 +10,7 @@ public class Person {
     private String Status;
     private String Grade;
     private String Age;
-    private ArrayList<String> Grades = new ArrayList<>();
+   /* private ArrayList<String> Grades = new ArrayList<>();*/
 
     public Person(String login, String password, String name, String surname, String status, String grade,  String age) {
         Login = login;
@@ -81,11 +81,11 @@ public class Person {
         return Grade;
     }
 
-    public void setGrades(ArrayList<String> grades) {
+   /* public void setGrades(ArrayList<String> grades) {
         for (int i = 0; i < grades.size() ; i++) {
             Grades.set(i, grades.get(i));
         }
-    }
+    }*/
     @Override
     public String toString() {
         return "Person{" +
@@ -99,7 +99,7 @@ public class Person {
                 '}';
     }
 
-    public ArrayList<String> getGrades() {
+  /*  public ArrayList<String> getGrades() {
         return Grades;
-    }
+    }*/
 }

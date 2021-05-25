@@ -15,7 +15,7 @@ import java.util.ArrayList;
 
 
 public class GradesActivity extends AppCompatActivity {
-    String l;
+  /*  String l;
     ListView listgrades;
     SQLiteDatabase db;
     ArrayList<Person> persons = new ArrayList<>();
@@ -54,7 +54,7 @@ public class GradesActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 String Grade = gradeAdapter.getItem(position);
                 Intent intent = new Intent(getApplicationContext(), ChoiceActivity.class);/*EditGradeActivity.class);*/
-                intent.putExtra("Grade", Grade);
+ /*               intent.putExtra("Grade", Grade);
                 startActivity(intent);
             }
         });
@@ -64,5 +64,5 @@ public class GradesActivity extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
         db.close();
-    }
+    }*/
 }

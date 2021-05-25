@@ -30,14 +30,14 @@ public class TeachersActivity extends AppCompatActivity {
         g = getIntent().getStringExtra("PersonGrade");
         listView = findViewById(R.id.teachers);
         personList = new ArrayList<Person>();
-        gradeList = new ArrayList<String>();
+       /* gradeList = new ArrayList<String>();*/
         dataBaseHelper = new DataBaseHelper(getApplicationContext());
         dataBaseHelper.create_db();
         try {
             adapter = new DataBaseAdapter(this);
             adapter.open();
             db = dataBaseHelper.open();
-            List<Person> personList = adapter.getPersons();
+           /* List<Person> personList = adapter.getPersons();
             for (int i = 0; i < personList.size(); i++) {
                 gradeList = personList.get(i).getGrades();
                 l=0;
@@ -53,7 +53,7 @@ public class TeachersActivity extends AppCompatActivity {
                 } else {
                     personList.remove(i);
                 }
-            }
+            }*/
 
             if (k>0) {
                 personAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, personList);

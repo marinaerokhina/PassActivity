@@ -11,7 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.util.ArrayList;
 
 public class GradeActivity extends AppCompatActivity {
-    EditText edit;
+  /*  EditText edit;
     ArrayList<String> gradeList;
     DataBaseAdapter adapter;
     String l;
@@ -40,5 +40,5 @@ public class GradeActivity extends AppCompatActivity {
         Toast.makeText(this, R.string.grades_success, Toast.LENGTH_LONG).show();
         Intent intent = new Intent (GradeActivity.this, LoginActivity.class);
         startActivity(intent);
-    }
+    }*/
 }

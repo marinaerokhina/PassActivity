@@ -19,11 +19,11 @@ public class TeacherAccActivity extends AppCompatActivity {
     TextView login, password, status, name, surname, age, warning;
     String p, st, n, s;
     String a;
-    ListView listgrades;
-    ArrayList<String> grades = new ArrayList<>();
+  /*  ListView listgrades;
+    ArrayList<String> grades = new ArrayList<>();*/
     DataBaseAdapter dataBaseAdapter;
     Person person;
-    ArrayAdapter<String> gradeAdapter;
+   /* ArrayAdapter<String> gradeAdapter;*/
     DataBaseHelper dataBaseHelper;
     SQLiteDatabase db;
 
@@ -42,7 +42,7 @@ public class TeacherAccActivity extends AppCompatActivity {
         name = findViewById(R.id.name);
         surname = findViewById(R.id.surname);
         status = findViewById(R.id.status);
-        listgrades = findViewById(R.id.grades);
+     /*   listgrades = findViewById(R.id.grades);*/
         age = findViewById(R.id.age);
         warning = findViewById(R.id.warning);
         person = dataBaseAdapter.getPerson(l);
@@ -51,17 +51,17 @@ public class TeacherAccActivity extends AppCompatActivity {
         n = person.getName();
         s = person.getSurname();
         a = person.getAge();
-        grades = person.getGrades();
-        gradeAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1,grades);
+   /*     grades = person.getGrades();*/
+    /*    gradeAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1,grades);*/
         login.setText(l);
         password.setText(p);
         name.setText(n);
         surname.setText(s);
         status.setText(s);
-        listgrades.setAdapter(gradeAdapter);
+    /*    listgrades.setAdapter(gradeAdapter);*/
         age.setText(a);
         warning.setText(R.string.warning_change_params);
-        listgrades.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+    /*    listgrades.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 String Grade = gradeAdapter.getItem(position);
@@ -69,7 +69,7 @@ public class TeacherAccActivity extends AppCompatActivity {
                 intent.putExtra("Grade", Grade);
                 startActivity(intent);
             }
-        });
+        });*/
     }
 
     @Override
