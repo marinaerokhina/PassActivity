@@ -23,9 +23,7 @@ public class InfoActivity extends AppCompatActivity {
     Button search;
     DataBaseAdapter adapter;
     List<Person> personList;
-    SQLiteDatabase db;
     ArrayAdapter<Person> personAdapter;
-    DataBaseHelper dataBaseHelper;
     DataBaseAdapter dataBaseAdapter;
 
     @Override
@@ -38,10 +36,7 @@ public class InfoActivity extends AppCompatActivity {
         l = getIntent().getStringExtra("PersonLogin");
         personList = new ArrayList<Person>();
         dataBaseAdapter= new DataBaseAdapter(this);
-        dataBaseHelper = new DataBaseHelper(getApplicationContext());
-        dataBaseHelper.create_db();
         dataBaseAdapter.open();
-        db = dataBaseHelper.open();
 
     }
 
@@ -51,7 +46,6 @@ public class InfoActivity extends AppCompatActivity {
         try {
             adapter = new DataBaseAdapter(this);
             adapter.open();
-            db = dataBaseHelper.open();
             List<Person> personList = adapter.getPersons();
             personAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, personList);
             listView.setAdapter(personAdapter);
@@ -64,7 +58,6 @@ public class InfoActivity extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
         dataBaseAdapter.close();
-        db.close();
     }
 
     public void SearchPersons(View view) {
@@ -73,7 +66,6 @@ public class InfoActivity extends AppCompatActivity {
         try {
             adapter = new DataBaseAdapter(this);
             adapter.open();
-            db = dataBaseHelper.open();
             List<Person> personList = adapter.getPersons();
             for (int i = 0; i < personList.size(); i++) {
                 if (req.equals(personList.get(i).getName()) || req.equals(personList.get(i).getSurname()) || req.equals(personList.get(i).getStatus()) || req.equals(personList.get(i).getGrade())) {

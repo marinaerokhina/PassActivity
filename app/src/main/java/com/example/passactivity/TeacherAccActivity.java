@@ -19,13 +19,9 @@ public class TeacherAccActivity extends AppCompatActivity {
     TextView login, password, status, name, surname, age, warning;
     String p, st, n, s;
     String a;
-  /*  ListView listgrades;
-    ArrayList<String> grades = new ArrayList<>();*/
     DataBaseAdapter dataBaseAdapter;
     Person person;
-   /* ArrayAdapter<String> gradeAdapter;*/
-    DataBaseHelper dataBaseHelper;
-    SQLiteDatabase db;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,10 +29,7 @@ public class TeacherAccActivity extends AppCompatActivity {
         setContentView(R.layout.activity_teaheracc);
         l = getIntent().getStringExtra("PersonLogin");
         dataBaseAdapter= new DataBaseAdapter(this);
-        dataBaseHelper = new DataBaseHelper(getApplicationContext());
-        dataBaseHelper.create_db();
         dataBaseAdapter.open();
-        db = dataBaseHelper.open();
         login = findViewById(R.id.login);
         password = findViewById(R.id.password);
         name = findViewById(R.id.name);
@@ -76,6 +69,5 @@ public class TeacherAccActivity extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
         dataBaseAdapter.close();
-        db.close();
     }
 }

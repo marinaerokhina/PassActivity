@@ -22,9 +22,8 @@ public class TeacherInfoActivity extends AppCompatActivity {
     Button search;
     DataBaseAdapter adapter;
     List<Person> personList;
-    SQLiteDatabase db;
     ArrayAdapter<Person> personAdapter;
-    DataBaseHelper dataBaseHelper;
+    DataBaseAdapter dataBaseAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,8 +34,8 @@ public class TeacherInfoActivity extends AppCompatActivity {
         search = findViewById(R.id.bts_search);
         l = getIntent().getStringExtra("PersonLogin");
         personList = new ArrayList<Person>();
-        dataBaseHelper = new DataBaseHelper(getApplicationContext());
-        dataBaseHelper.create_db();
+        dataBaseAdapter = new DataBaseAdapter(this);
+        dataBaseAdapter.open();
 
     }
 
@@ -44,9 +43,6 @@ public class TeacherInfoActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         try {
-            adapter = new DataBaseAdapter(this);
-            adapter.open();
-            db = dataBaseHelper.open();
             List<Person> personList = adapter.getPersons();
             personAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, personList);
             listView.setAdapter(personAdapter);
@@ -58,17 +54,14 @@ public class TeacherInfoActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        adapter.close();
-        db.close();
+        dataBaseAdapter.close();
+
     }
 
     public void SearchPersons(View view) {
         req=request.getText().toString();
         int k=0;
         try {
-            adapter = new DataBaseAdapter(this);
-            adapter.open();
-            db = dataBaseHelper.open();
             List<Person> personList = adapter.getPersons();
             for (int i = 0; i < personList.size(); i++) {
                 if (req.equals(personList.get(i).getName()) || req.equals(personList.get(i).getSurname()) || req.equals(personList.get(i).getStatus()) || req.equals(personList.get(i).getGrade())) {

@@ -17,9 +17,7 @@ public class TableActivity extends AppCompatActivity {
 
         TextView textView;
         ListView listView;
-        EditText personFilter;
-        DataBaseHelper dataBaseHelper;
-        SQLiteDatabase db;
+        DataBaseAdapter adapter;
         Cursor userCursor;
 
         ArrayAdapter<Person> personAdapter;
@@ -30,10 +28,6 @@ public class TableActivity extends AppCompatActivity {
             setContentView(R.layout.activity_table);
             textView = findViewById(R.id.textview);
             listView = findViewById(R.id.list);
-
-            dataBaseHelper = new DataBaseHelper(getApplicationContext());
-
-            dataBaseHelper.create_db();
 
             listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
@@ -51,9 +45,8 @@ public class TableActivity extends AppCompatActivity {
         protected void onResume() {
             super.onResume();
             try {
-                DataBaseAdapter adapter= new DataBaseAdapter(this);
+                adapter= new DataBaseAdapter(this);
                 adapter.open();
-                db = dataBaseHelper.open();
                 List<Person> persons = adapter.getPersons();
                 personAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1,persons);
 
@@ -85,7 +78,7 @@ public class TableActivity extends AppCompatActivity {
         @Override
         protected void onDestroy() {
             super.onDestroy();
-            db.close();
+            adapter.close();
             //   userCursor.close();
         }
 }

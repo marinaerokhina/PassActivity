@@ -16,18 +16,13 @@ public class AccountActivity extends AppCompatActivity {
     String a;
     DataBaseAdapter dataBaseAdapter;
     Person person;
-    DataBaseHelper dataBaseHelper;
-    SQLiteDatabase db;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_account);
         l=getIntent().getStringExtra("login");
         dataBaseAdapter= new DataBaseAdapter(this);
-        dataBaseHelper = new DataBaseHelper(getApplicationContext());
-        dataBaseHelper.create_db();
         dataBaseAdapter.open();
-        db = dataBaseHelper.open();
         login = findViewById(R.id.login);
         password = findViewById(R.id.password);
         name = findViewById(R.id.name);
@@ -78,6 +73,5 @@ public class AccountActivity extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
         dataBaseAdapter.close();
-        db.close();
     }
 }

@@ -19,8 +19,6 @@ public class RegistActivity extends AppCompatActivity {
     EditText name, surname, status, login, password, age, grade;
     int cnt = 0, cnt0 = 7;
     DataBaseAdapter dbAdapter;
-    DataBaseHelper dataBaseHelper;
-    SQLiteDatabase db;
     final  static String LOG_TAG = "MYLOG";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,10 +32,7 @@ public class RegistActivity extends AppCompatActivity {
         age = findViewById(R.id.Age);
         grade = findViewById(R.id.Grade);
         dbAdapter= new DataBaseAdapter(this);
-        dataBaseHelper = new DataBaseHelper(getApplicationContext());
-        dataBaseHelper.create_db();
         dbAdapter.open();
-        db = dataBaseHelper.open();
     }
 
     public void onRegistration(View view) {
@@ -112,13 +107,13 @@ public class RegistActivity extends AppCompatActivity {
             Toast.makeText(this, "@string/grade_error2", Toast.LENGTH_LONG).show();
         }*/
         Toast.makeText(this, R.string.reg_success, Toast.LENGTH_LONG).show();
-        if (person.getStatus().equals(R.string.status1)){
+        if (person.getStatus().equals(getResources().getString(R.string.status1))){
             dbAdapter.insert(person);
             Intent intent = new Intent(RegistActivity.this, TeacherHomeActivity.class);
             intent.putExtra("Person", person.getLogin());
             startActivity(intent);
             finish();
-        } else if (person.getStatus().equals(R.string.status3)){
+        } else if (person.getStatus().equals(getResources().getString(R.string.status3))){
             dbAdapter.insert(person);
             Intent intent = new Intent(RegistActivity.this, LoginActivity.class);
             startActivity(intent);
@@ -139,6 +134,5 @@ public class RegistActivity extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
         dbAdapter.close();
-        db.close();
     }
 }

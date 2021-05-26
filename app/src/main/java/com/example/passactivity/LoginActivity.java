@@ -21,8 +21,6 @@ public class LoginActivity extends AppCompatActivity {
     EditText login;
     EditText password;
     Button btn;
-    String LOGIN;
-    String PASSWORD;
     String l;
     String p;
     DataBaseAdapter dataBaseAdapter;
@@ -55,21 +53,18 @@ public class LoginActivity extends AppCompatActivity {
 
             if (l.equals(personList.get(i).getLogin()) && p.equals(personList.get(i).getPassword())) {
                 Toast.makeText(this, R.string.log_success, Toast.LENGTH_LONG).show();
-                if (personList.get(i).getStatus().equals(R.string.status3)){
+                if (personList.get(i).getStatus().equals(getResources().getString(R.string.status3))){
                     Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
                     intent.putExtra("PersonLogin", l);
                     startActivity(intent);
-                    finish();
-                } else if (personList.get(i).getStatus().equals(R.string.status1)){
+                } else if (personList.get(i).getStatus().equals(getResources().getString(R.string.status1))){
                     Intent intent = new Intent(LoginActivity.this, TeacherHomeActivity.class);
                     intent.putExtra("PersonLogin", l);
                     startActivity(intent);
-                    finish();
-                } else if(personList.get(i).getStatus().equals(R.string.status2)){
+                } else if(personList.get(i).getStatus().equals(getResources().getString(R.string.status2))){
                     Intent intent = new Intent(LoginActivity.this, AdminHomeActivity.class);
                     intent.putExtra("PersonLogin", l);
                     startActivity(intent);
-                    finish();
                 } else {
                     Toast.makeText(this, R.string.log_error3, Toast.LENGTH_LONG).show();
                 }

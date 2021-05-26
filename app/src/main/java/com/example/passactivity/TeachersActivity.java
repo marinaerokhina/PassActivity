@@ -20,9 +20,7 @@ public class TeachersActivity extends AppCompatActivity {
     DataBaseAdapter adapter;
     List<Person> personList;
     ArrayList<String> gradeList;
-    SQLiteDatabase db;
     ArrayAdapter<Person> personAdapter;
-    DataBaseHelper dataBaseHelper;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,12 +29,9 @@ public class TeachersActivity extends AppCompatActivity {
         listView = findViewById(R.id.teachers);
         personList = new ArrayList<Person>();
        /* gradeList = new ArrayList<String>();*/
-        dataBaseHelper = new DataBaseHelper(getApplicationContext());
-        dataBaseHelper.create_db();
         try {
             adapter = new DataBaseAdapter(this);
             adapter.open();
-            db = dataBaseHelper.open();
            /* List<Person> personList = adapter.getPersons();
             for (int i = 0; i < personList.size(); i++) {
                 gradeList = personList.get(i).getGrades();
@@ -71,6 +66,5 @@ public class TeachersActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        db.close();
     }
 }
