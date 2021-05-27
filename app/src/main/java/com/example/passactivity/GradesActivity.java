@@ -12,7 +12,7 @@ import android.widget.ListView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
-
+//Это был класс, кторый выводил список классов для учителя, но над реализацией еще надо полумать
 
 public class GradesActivity extends AppCompatActivity {
   /*  String l;

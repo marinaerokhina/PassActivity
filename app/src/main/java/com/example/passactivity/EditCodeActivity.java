@@ -6,7 +6,7 @@ import android.widget.EditText;
 
 
 import androidx.appcompat.app.AppCompatActivity;
-
+//Класс изменения кода подтверждения
 public class EditCodeActivity extends AppCompatActivity {
     EditText editCode;
     String code;
@@ -16,7 +16,7 @@ public class EditCodeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_edit_code);
         editCode = findViewById(R.id.edit);
     }
-
+//Сохранение нового кода
     public void SaveCode(View view) {
         code=editCode.getText().toString();
         ConfirmCode confirmCode = new ConfirmCode();

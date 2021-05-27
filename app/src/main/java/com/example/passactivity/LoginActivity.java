@@ -15,7 +15,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
-
+//Главный класс, класс входа в аккаунт
 public class LoginActivity extends AppCompatActivity {
     TextView textview;
     EditText login;
@@ -43,7 +43,7 @@ public class LoginActivity extends AppCompatActivity {
         dataBaseAdapter.open();
         db = dataBaseHelper.open();
     }
-
+//Проверка на совпадения в табице. Если совпедение есть, то открывается одна из HomeActivity
     public void CheckPerson(View view) {
         l = login.getText().toString();
         p = password.getText().toString();
@@ -76,7 +76,7 @@ public class LoginActivity extends AppCompatActivity {
         }
     }
 
-
+//Переход в класс регистрации
     public void onRegistrate(View view) {
         Intent intent = new Intent(LoginActivity.this, RegistActivity.class);
         startActivity(intent);

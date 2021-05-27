@@ -15,7 +15,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
 import java.util.List;
-
+//Класс с таблицей и возможностью поиска
 public class InfoActivity extends AppCompatActivity {
     String l, req;
     ListView listView;
@@ -59,7 +59,7 @@ public class InfoActivity extends AppCompatActivity {
         super.onDestroy();
         dataBaseAdapter.close();
     }
-
+//Метод поиска персон по запросу. Запрос выполняется, если слово в запросе полностью соответствует данным в запросе
     public void SearchPersons(View view) {
         req=request.getText().toString();
         int k=0;

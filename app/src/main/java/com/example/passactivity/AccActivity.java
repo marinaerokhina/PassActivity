@@ -10,7 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
 import java.util.List;
-
+//Класс-аккаунт, показывает данные пользователя
 public class AccActivity extends AppCompatActivity {
     String l;
     TextView login, password, status, name, surname, grade, age, warning;
@@ -51,9 +51,9 @@ public class AccActivity extends AppCompatActivity {
     }
 
     public void ShowTeacherList(View view) {
-        Intent intent = new Intent (getApplicationContext(), TeachersActivity.class);
+        /*Intent intent = new Intent (getApplicationContext(), TeachersActivity.class);
         intent.putExtra("PersonGrade", g);
-        startActivity(intent);
+        startActivity(intent);*/
     }
     @Override
     protected void onDestroy() {

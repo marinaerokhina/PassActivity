@@ -12,7 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
 import java.util.List;
-
+//Класс с таблицей, показывающий учителей. Над реализацией надо подумать
 public class TeachersActivity extends AppCompatActivity {
     String g;
     int k=0, l=0;

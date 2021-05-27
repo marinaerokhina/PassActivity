@@ -1,5 +1,5 @@
 package com.example.passactivity;
-
+//Класс, гда хранится код подтверждения. НЕ ДОДЕЛАН
 public class ConfirmCode {
     private String code;
 

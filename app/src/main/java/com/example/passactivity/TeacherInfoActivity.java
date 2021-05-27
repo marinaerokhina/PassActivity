@@ -14,7 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
 import java.util.List;
-
+//Класс с таблицей
 public class TeacherInfoActivity extends AppCompatActivity {
     String l, req;
     ListView listView;
@@ -57,7 +57,7 @@ public class TeacherInfoActivity extends AppCompatActivity {
         dataBaseAdapter.close();
 
     }
-
+//Метод поиска персон
     public void SearchPersons(View view) {
         req=request.getText().toString();
         int k=0;

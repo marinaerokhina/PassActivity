@@ -12,7 +12,7 @@ import android.widget.*;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.List;
-
+//Полная таблица
 public class TableActivity extends AppCompatActivity {
 
         TextView textView;

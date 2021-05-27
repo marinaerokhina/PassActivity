@@ -11,14 +11,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
 import java.util.List;
-
+//Еще класс студентов
 public class StudentsActivity extends AppCompatActivity {
     String g;
     int k=0;
     ListView listView;
     DataBaseAdapter adapter;
     List<Person> personList;
-    SQLiteDatabase db;
     ArrayAdapter<Person> personAdapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {

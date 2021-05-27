@@ -9,7 +9,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
-
+//Это был класс, который создавал список классов для учителя, но над реализацией еще надо подумать
 public class GradeActivity extends AppCompatActivity {
   /*  EditText edit;
     ArrayList<String> gradeList;

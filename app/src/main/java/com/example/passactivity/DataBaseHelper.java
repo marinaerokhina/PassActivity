@@ -22,7 +22,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     public static final String COLUMN_GRADE = "grade";
     public static final String COLUMN_AGE = "age";
     private Context MyContext;
-
+//Поиск созданной таблицы
     public DataBaseHelper(Context context) {
         super(context, DATABASE_NAME, null, SCHEMA);
         this.MyContext = context;
@@ -48,7 +48,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         // db.execSQL("DROP TABLE IF EXISTS " + TABLE);
         //onCreate(db);
     }
-
+//Создание таблицы
     void create_db() {
         InputStream myInput = null;
         OutputStream myOutput = null;
@@ -83,7 +83,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
     }
 
-
+//Открытие таблицы
     public SQLiteDatabase open() throws SQLException {
         return SQLiteDatabase.openDatabase(DATABASE_PATH, null, SQLiteDatabase.OPEN_READWRITE);
     }

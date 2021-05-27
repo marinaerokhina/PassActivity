@@ -14,7 +14,7 @@ import com.example.passactivity.DataBaseAdapter;
 import com.example.passactivity.LoginActivity;
 import com.example.passactivity.Person;
 import com.example.passactivity.R;
-
+//Класс регистрации персоны
 public class RegistActivity extends AppCompatActivity {
     EditText name, surname, status, login, password, age, grade;
     int cnt = 0, cnt0 = 7;
@@ -34,7 +34,7 @@ public class RegistActivity extends AppCompatActivity {
         dbAdapter= new DataBaseAdapter(this);
         dbAdapter.open();
     }
-
+//Метод регистрации персоны
     public void onRegistration(View view) {
         String Name = name.getText().toString();
         String Password = password.getText().toString();
@@ -109,8 +109,7 @@ public class RegistActivity extends AppCompatActivity {
         Toast.makeText(this, R.string.reg_success, Toast.LENGTH_LONG).show();
         if (person.getStatus().equals(getResources().getString(R.string.status1))){
             dbAdapter.insert(person);
-            Intent intent = new Intent(RegistActivity.this, TeacherHomeActivity.class);
-            intent.putExtra("Person", person.getLogin());
+            Intent intent = new Intent(RegistActivity.this, LoginActivity.class);
             startActivity(intent);
             finish();
         } else if (person.getStatus().equals(getResources().getString(R.string.status3))){

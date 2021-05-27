@@ -13,7 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
 
-
+//Класс-аккаунт для учителя
 public class TeacherAccActivity extends AppCompatActivity {
     String l;
     TextView login, password, status, name, surname, age, warning;

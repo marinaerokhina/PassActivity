@@ -12,30 +12,30 @@ import java.util.List;
 public class DataBaseAdapter {
     private DataBaseHelper dataBaseHelper;
     private SQLiteDatabase database;
-
+//При объявлении адаптера также объявляется хелпер
     public DataBaseAdapter(Context context) {
         dataBaseHelper = new DataBaseHelper(context.getApplicationContext());
     }
-
+//метод открытия адаптера и хелпера
     public DataBaseAdapter open() {
         database = dataBaseHelper.open();
         return this;
     }
-
+//Метод, обратный вышеописанному методу
     public void close() {
         dataBaseHelper.close();
     }
-
+//Метод, возвращающий количество записей в таблице
     public long getCount() {
         return DatabaseUtils.queryNumEntries(database, DataBaseHelper.TABLE);
     }
-
+//Метод, возвращающий поля таблицу у одной персоны
     private Cursor getAllElements() {
         String[] columns = new String[]{DataBaseHelper.COLUMN_LOGIN, DataBaseHelper.COLUMN_PASSWORD, DataBaseHelper.COLUMN_NAME, DataBaseHelper.COLUMN_SURNAME,
                 DataBaseHelper.COLUMN_STATUS, DataBaseHelper.COLUMN_GRADE, DataBaseHelper.COLUMN_AGE};
         return database.query(DataBaseHelper.TABLE, columns, null, null, null, null, null);
     }
-
+//Метод добавления персоны в таблицу
     public long insert(Person person) {
         ContentValues cv = new ContentValues();
         cv.put(DataBaseHelper.COLUMN_LOGIN, person.getLogin());
@@ -47,13 +47,13 @@ public class DataBaseAdapter {
         cv.put(DataBaseHelper.COLUMN_AGE, person.getAge());
         return database.insert(DataBaseHelper.TABLE, null, cv);
     }
-
+//Метод удаления персоны из таблицы
     public long delete(String personLogin) {
         String whereClause = "login = ?";
         String[] whereArgs = new String[]{String.valueOf(personLogin)};
         return database.delete(DataBaseHelper.TABLE, whereClause, whereArgs);
     }
-
+//Метод обновления значений полей у персоны
     public long update(Person person) {
         String whereClause = DataBaseHelper.COLUMN_LOGIN + "=" + String.valueOf(person.getLogin());
         ContentValues cv = new ContentValues();
@@ -64,7 +64,7 @@ public class DataBaseAdapter {
         cv.put(DataBaseHelper.COLUMN_AGE, person.getAge());
         return database.update(DataBaseHelper.TABLE, cv, whereClause, null);
     }
-
+//Метод, возвращающий массив персон из таблицы
     public List<Person> getPersons() {
         ArrayList<Person> persons  = new ArrayList<>();
         Cursor cursor = getAllElements();
@@ -81,7 +81,7 @@ public class DataBaseAdapter {
         cursor.close();
         return  persons;
     }
-
+//Метод, возвращаюший одну персону из таблицы
     public Person getPerson(String login) {
         Person person = null;
         String query = String.format("SELECT * FROM %s WHERE %s=?", DataBaseHelper.TABLE, DataBaseHelper.COLUMN_LOGIN);

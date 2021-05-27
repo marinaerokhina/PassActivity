@@ -3,7 +3,7 @@ package com.example.passactivity;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
-
+//Класс студентов
 public class StudActivity extends AppCompatActivity {
     String l;
     @Override

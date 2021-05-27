@@ -1,7 +1,7 @@
 package com.example.passactivity;
 
 import java.util.ArrayList;
-
+//Класс с методами персоны
 public class Person {
     private String Login;
     private String Password;

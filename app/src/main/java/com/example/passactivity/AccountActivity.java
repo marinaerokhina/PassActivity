@@ -8,7 +8,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
-
+//Класс-аккаунт для администратора - позволяет изменять данные пользователя
 public class AccountActivity extends AppCompatActivity {
     String l;
     EditText login, password, status, name, surname, grade, age;
@@ -45,7 +45,7 @@ public class AccountActivity extends AppCompatActivity {
         grade.setText(g);
         age.setText(a);
     }
-
+//Метод, сохраняющий изменения в персоне
     public void SaveAll(View view) {
         l=login.getText().toString();
         p=password.getText().toString();
@@ -61,12 +61,13 @@ public class AccountActivity extends AppCompatActivity {
         person.setStatus(st);
         person.setGrade(g);
         person.setAge(a);
+        dataBaseAdapter.update(person);
     }
 
     public void ShowGradeList(View view) {
-        Intent intent = new Intent(getApplicationContext(), GradesActivity.class);
+      /*  Intent intent = new Intent(getApplicationContext(), GradesActivity.class);
         intent.putExtra("Login", l);
-        startActivity(intent);
+        startActivity(intent);*/
     }
 
     @Override
