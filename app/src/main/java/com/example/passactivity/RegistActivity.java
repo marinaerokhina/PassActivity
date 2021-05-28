@@ -17,9 +17,8 @@ import com.example.passactivity.R;
 //Класс регистрации персоны
 public class RegistActivity extends AppCompatActivity {
     EditText name, surname, status, login, password, age, grade;
-    int cnt = 0, cnt0 = 7;
     DataBaseAdapter dbAdapter;
-    final  static String LOG_TAG = "MYLOG";
+  //  final  static String LOG_TAG = "MYLOG";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -119,7 +118,7 @@ public class RegistActivity extends AppCompatActivity {
             finish();
         } else {
 
-            Log.d(LOG_TAG,"PERSON " + person.toString());
+       //     Log.d(LOG_TAG,"PERSON " + person.toString());
             dbAdapter.insert(person);
             Intent intent = new Intent(RegistActivity.this, ConfirmActivity.class);
             intent.putExtra("Person", person.getLogin());

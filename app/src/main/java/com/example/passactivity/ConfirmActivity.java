@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class ConfirmActivity extends AppCompatActivity {
     EditText edit;
     String admin_code, editcode;
+    ConfirmCode confirmCode;
     String l;
     int k=0;
     DataBaseAdapter adapter;
@@ -20,7 +21,7 @@ public class ConfirmActivity extends AppCompatActivity {
         setContentView(R.layout.activity_confirm);
         edit=findViewById(R.id.codeconf);
         l = getIntent().getStringExtra("Person");
-        ConfirmCode confirmCode = new ConfirmCode();
+        confirmCode = new ConfirmCode();
         admin_code = confirmCode.getCode();
     }
 //Метод проверки введенного кода и переход в активность входа в аккаунт при правильности введения кода
