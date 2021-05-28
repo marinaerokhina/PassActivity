@@ -18,7 +18,8 @@ import com.example.passactivity.R;
 public class RegistActivity extends AppCompatActivity {
     EditText name, surname, status, login, password, age, grade;
     DataBaseAdapter dbAdapter;
-  //  final  static String LOG_TAG = "MYLOG";
+    Person person;
+    //final  static String LOG_TAG = "MYLOG";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,7 +44,7 @@ public class RegistActivity extends AppCompatActivity {
         String Grade = grade.getText().toString();
         String Age = age.getText().toString();
 
-        Person person = new Person();
+        person = new Person();
         try {
             person.setLogin(Login);
             person.setPassword(Password);
@@ -105,6 +106,8 @@ public class RegistActivity extends AppCompatActivity {
         } else {
             Toast.makeText(this, "@string/grade_error2", Toast.LENGTH_LONG).show();
         }*/
+        //Log.d(LOG_TAG,);
+        Toast.makeText(this, "PERSON " + person.toString(), Toast.LENGTH_LONG).show();
         Toast.makeText(this, R.string.reg_success, Toast.LENGTH_LONG).show();
         if (person.getStatus().equals(getResources().getString(R.string.status1))){
             dbAdapter.insert(person);
@@ -118,7 +121,7 @@ public class RegistActivity extends AppCompatActivity {
             finish();
         } else {
 
-       //     Log.d(LOG_TAG,"PERSON " + person.toString());
+
             dbAdapter.insert(person);
             Intent intent = new Intent(RegistActivity.this, ConfirmActivity.class);
             intent.putExtra("Person", person.getLogin());
